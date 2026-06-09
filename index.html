@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nexus Core Survivor</title>
+    <meta
+      name="description"
+      content="Nexus Core Survivor: um jogo de sobrevivencia em arena com upgrades, ondas de inimigos e defesa automatica da rede."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hud" aria-label="Painel do jogo">
+        <div class="brand">
+          <span class="mark" aria-hidden="true">N</span>
+          <div>
+            <p class="eyebrow">Nexus Defense Lab</p>
+            <h1>Core Survivor</h1>
+          </div>
+        </div>
+
+        <div class="readouts" aria-live="polite">
+          <div>
+            <span>Tempo</span>
+            <strong id="time">00:00</strong>
+          </div>
+          <div>
+            <span>Nivel</span>
+            <strong id="level">1</strong>
+          </div>
+          <div>
+            <span>Eliminados</span>
+            <strong id="kills">0</strong>
+          </div>
+          <div>
+            <span>Integridade</span>
+            <strong id="health">100%</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="arena-frame" aria-label="Nexus Core Survivor">
+        <canvas id="game" width="1280" height="720" aria-label="Arena de sobrevivencia Nexus"></canvas>
+
+        <div class="xp-track" aria-label="Progresso de experiencia">
+          <span id="xp-bar"></span>
+        </div>
+
+        <div class="overlay" id="overlay">
+          <div class="overlay-panel">
+            <p class="eyebrow">Nexus Core Survivor</p>
+            <h2 id="overlay-title">Defende o nucleo</h2>
+            <p id="overlay-copy">
+              Sobrevive a vagas de intrusoes, recolhe dados e escolhe upgrades para transformar a Nexus numa fortaleza autonoma.
+            </p>
+            <button id="start-button" type="button">Iniciar defesa</button>
+          </div>
+        </div>
+
+        <div class="upgrade-layer is-hidden" id="upgrade-layer" aria-live="polite">
+          <div class="upgrade-panel">
+            <p class="eyebrow">Upgrade desbloqueado</p>
+            <h2>Escolhe o proximo modulo</h2>
+            <div class="upgrade-grid" id="upgrade-grid"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="loadout" aria-label="Controlos e modulos">
+        <div>
+          <span>Movimento</span>
+          <strong>WASD, setas, rato ou toque</strong>
+        </div>
+        <div>
+          <span>Combate</span>
+          <strong>Automatico</strong>
+        </div>
+        <div>
+          <span>Modulos</span>
+          <strong id="modules">Pulse Rifle I</strong>
+        </div>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
