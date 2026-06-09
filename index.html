@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nexus Signal Run</title>
+    <meta
+      name="description"
+      content="Um jogo arcade criado para a Nexus: guia o sinal, recolhe energia e mantém a rede viva."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="topbar" aria-label="Informacao do jogo">
+        <div class="brand">
+          <span class="mark" aria-hidden="true">N</span>
+          <div>
+            <p class="eyebrow">Nexus</p>
+            <h1>Signal Run</h1>
+          </div>
+        </div>
+        <div class="stats" aria-live="polite">
+          <div>
+            <span>Pontos</span>
+            <strong id="score">0</strong>
+          </div>
+          <div>
+            <span>Nivel</span>
+            <strong id="level">1</strong>
+          </div>
+          <div>
+            <span>Energia</span>
+            <strong id="energy">100%</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="game-wrap">
+        <canvas id="game" width="960" height="540" aria-label="Area de jogo Nexus Signal Run"></canvas>
+        <div class="overlay" id="overlay">
+          <div class="overlay-panel">
+            <p class="eyebrow">Missao Nexus</p>
+            <h2 id="overlay-title">Liga a rede</h2>
+            <p id="overlay-copy">
+              Move o sinal Nexus, recolhe nucleos de energia e evita interferencias para manter a operacao online.
+            </p>
+            <button id="start-button" type="button">Comecar</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="Controlos">
+        <div>
+          <span>Mover</span>
+          <strong>Setas, WASD, rato ou toque</strong>
+        </div>
+        <div>
+          <span>Pausa</span>
+          <strong>Espaco</strong>
+        </div>
+        <div>
+          <span>Objetivo</span>
+          <strong>Energia alta, interferencia baixa</strong>
+        </div>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
