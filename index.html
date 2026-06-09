@@ -3,65 +3,83 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Nexus Signal Run</title>
+    <title>Nexus Core Survivor</title>
     <meta
       name="description"
-      content="Um jogo arcade criado para a Nexus: guia o sinal, recolhe energia e mantém a rede viva."
+      content="Nexus Core Survivor: um jogo de sobrevivencia em arena com upgrades, ondas de inimigos e defesa automatica da rede."
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="shell">
-      <section class="topbar" aria-label="Informacao do jogo">
+      <section class="hud" aria-label="Painel do jogo">
         <div class="brand">
           <span class="mark" aria-hidden="true">N</span>
           <div>
-            <p class="eyebrow">Nexus</p>
-            <h1>Signal Run</h1>
+            <p class="eyebrow">Nexus Defense Lab</p>
+            <h1>Core Survivor</h1>
           </div>
         </div>
-        <div class="stats" aria-live="polite">
+
+        <div class="readouts" aria-live="polite">
           <div>
-            <span>Pontos</span>
-            <strong id="score">0</strong>
+            <span>Tempo</span>
+            <strong id="time">00:00</strong>
           </div>
           <div>
             <span>Nivel</span>
             <strong id="level">1</strong>
           </div>
           <div>
-            <span>Energia</span>
-            <strong id="energy">100%</strong>
+            <span>Eliminados</span>
+            <strong id="kills">0</strong>
+          </div>
+          <div>
+            <span>Integridade</span>
+            <strong id="health">100%</strong>
           </div>
         </div>
       </section>
 
-      <section class="game-wrap">
-        <canvas id="game" width="960" height="540" aria-label="Area de jogo Nexus Signal Run"></canvas>
+      <section class="arena-frame" aria-label="Nexus Core Survivor">
+        <canvas id="game" width="1280" height="720" aria-label="Arena de sobrevivencia Nexus"></canvas>
+
+        <div class="xp-track" aria-label="Progresso de experiencia">
+          <span id="xp-bar"></span>
+        </div>
+
         <div class="overlay" id="overlay">
           <div class="overlay-panel">
-            <p class="eyebrow">Missao Nexus</p>
-            <h2 id="overlay-title">Liga a rede</h2>
+            <p class="eyebrow">Nexus Core Survivor</p>
+            <h2 id="overlay-title">Defende o nucleo</h2>
             <p id="overlay-copy">
-              Move o sinal Nexus, recolhe nucleos de energia e evita interferencias para manter a operacao online.
+              Sobrevive a vagas de intrusoes, recolhe dados e escolhe upgrades para transformar a Nexus numa fortaleza autonoma.
             </p>
-            <button id="start-button" type="button">Comecar</button>
+            <button id="start-button" type="button">Iniciar defesa</button>
+          </div>
+        </div>
+
+        <div class="upgrade-layer is-hidden" id="upgrade-layer" aria-live="polite">
+          <div class="upgrade-panel">
+            <p class="eyebrow">Upgrade desbloqueado</p>
+            <h2>Escolhe o proximo modulo</h2>
+            <div class="upgrade-grid" id="upgrade-grid"></div>
           </div>
         </div>
       </section>
 
-      <section class="controls" aria-label="Controlos">
+      <section class="loadout" aria-label="Controlos e modulos">
         <div>
-          <span>Mover</span>
-          <strong>Setas, WASD, rato ou toque</strong>
+          <span>Movimento</span>
+          <strong>WASD, setas, rato ou toque</strong>
         </div>
         <div>
-          <span>Pausa</span>
-          <strong>Espaco</strong>
+          <span>Combate</span>
+          <strong>Automatico</strong>
         </div>
         <div>
-          <span>Objetivo</span>
-          <strong>Energia alta, interferencia baixa</strong>
+          <span>Modulos</span>
+          <strong id="modules">Pulse Rifle I</strong>
         </div>
       </section>
     </main>

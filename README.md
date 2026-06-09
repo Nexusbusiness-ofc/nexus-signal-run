@@ -1,14 +1,15 @@
-# Nexus Signal Run
+# Nexus Core Survivor
 
-Um jogo arcade web criado para a Nexus.
+Um jogo de sobrevivencia em arena criado para a Nexus, inspirado no ritmo de survivor.io.
 
 ## Como jogar
 
-- Move o sinal Nexus com setas, WASD, rato ou toque.
-- Recolhe nucleos de energia para subir a pontuacao.
-- Evita interferencias para manter a energia da rede.
+- Move o nucleo Nexus com setas, WASD, rato ou toque.
+- As armas disparam automaticamente contra as intrusoes.
+- Recolhe pacotes de dados para ganhar experiencia.
+- Ao subir de nivel, escolhe modulos de ataque, defesa e recolha.
 - Usa espaco para pausar.
 
 ## Publicacao
 
-Este projeto e estatico. Pode ser publicado diretamente com GitHub Pages a partir dos ficheiros na raiz do repositorio.
+Este projeto e estatico e publica automaticamente no GitHub Pages atraves do workflow incluido.
